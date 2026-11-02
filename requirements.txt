@@ -1,0 +1,11 @@
+kedro
+kedro-viz
+pandas
+torch
+torch-geometric
+neo4j
+networkx
+pyvis
+duckdb
+scikit-learn
+

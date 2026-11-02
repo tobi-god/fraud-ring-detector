@@ -1,0 +1,8 @@
+raw_transactions_dataset:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/synthetic_sample.csv
+
+fraud_graph_db:
+  type: pandas.CSVDataSet # (Or a custom Neo4j dataset type later)
+  filepath: data/01_raw/synthetic_sample.csv
+  credentials: neo4j_credentials

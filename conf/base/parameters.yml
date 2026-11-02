@@ -1,0 +1,14 @@
+# Neural Network Hyperparameters & Dimensions
+model_params:
+  in_features: 64
+  gcn_hidden: 128
+  gnn_out: 64
+  cnn_channels: 32
+  seq_len: 10
+  num_features: 4
+  dropout_rate: 0.3
+  learning_rate: 0.001
+
+# for dynamic thresholding
+aml_risk_appetite:
+  decision_threshold: 0.75  # Higher = fewer alerts, lower = more alerts
