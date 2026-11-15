@@ -2,7 +2,7 @@
 
 A hybrid deep learning pipeline built with Kedro and PyTorch Geometric to detect complex money-laundering syndicates and corporate financial fraud under leakage-aware evaluation.
 
-## Executive Summary
+## Project Summary
 
 - **End-to-End Pipeline:** Built with Kedro and PyTorch Geometric to score transactions for fraud and benchmark three progressively expressive architectures (`M1`, `M2`, and `M3`).
 - **Relational Feature Lift:** Engineering graph-derived entity sharing and historical features (such as shared cards and devices per customer) increased gradient-boosting performance from **0.128 to 0.725 PR-AUC** on multi-pattern banking data.
@@ -28,7 +28,7 @@ All experiments follow strict leakage-prevention protocols:
 - Sender-clustered bootstrap confidence intervals, and
 - Pre-modeling dataset profiling to verify structural signal before training.
 
-> **Architectural Attribution:** Inspired by the hybrid GCN+CNN framework in Cai (2026), *Int. J. Comput. Intell. Syst.* 19:186. This repository implements an architectural extension rather than a direct replication (see *Differences from Cai (2026)* below).
+> **Architectural Attribution:** Inspired by the hybrid GCN+CNN framework in Cai (2026), *Int. J. Comput. Intell. Syst.* 19:186. This repository implements an architectural extension rather than a direct replication (see distintion in *Differences from Cai (2026)* below).
 
 ## Architecture & Evaluation Ladder
 
@@ -158,7 +158,7 @@ Decision rules were pre-registered prior to executing Track A (`docs/TRACK_A_PLA
 
 ## Differences from Cai (2026)
 
-While inspired by the hybrid GCN+CNN architecture proposed in Cai (2026), this implementation differs across every core component:
+While inspired by the hybrid GCN+CNN architecture proposed in Cai (2026), this implementation differs across core components:
 
 - **Model Architecture:** Uses inductive GraphSAGE (`SAGEConv`) rather than transductive GCN, paired with a 1D-CNN over each sender's chronological last-$K$ transaction sequence rather than reshaped single-transaction feature vectors.
 - **Datasets:** Evaluated on a multi-pattern banking dataset and IBM AMLworld rather than PaySim alone, where graph structure is overly sparse.
