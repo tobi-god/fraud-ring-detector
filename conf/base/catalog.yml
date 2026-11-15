@@ -1,8 +1,34 @@
-raw_transactions_dataset:
+raw_transactions:
   type: pandas.CSVDataset
-  filepath: data/01_raw/synthetic_sample.csv
+  filepath: data/01_raw/paysim_sample.csv
 
-fraud_graph_db:
-  type: pandas.CSVDataSet # (Or a custom Neo4j dataset type later)
-  filepath: data/01_raw/synthetic_sample.csv
-  credentials: neo4j_credentials
+evaluation_metrics:
+  type: json.JSONDataset
+  filepath: data/07_model_output/metrics.json
+
+threshold_sweep:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/threshold_sweep.csv
+
+syndicate_summary:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/syndicates.csv
+
+account_roles:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/account_roles.csv
+
+fraud_rings_dashboard:
+  type: text.TextDataset
+  filepath: data/07_model_output/fraud_rings_dashboard.html
+  fs_args:
+    open_args_save:
+      encoding: utf-8      # Windows defaults to cp1252, which cannot encode the dashboard's characters
+
+neo4j_sync_status:
+  type: json.JSONDataset
+  filepath: data/07_model_output/neo4j_sync_status.json
+
+pattern_recall:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/pattern_recall.csv
