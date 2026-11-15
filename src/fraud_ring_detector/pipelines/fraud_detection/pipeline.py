@@ -1,39 +1,23 @@
-from kedro.pipeline import Pipeline, node
-from .nodes import (build_bipartite_graph_and_sync, extract_temporal_windows, train_gcn_cnn_model, run_louvain_community_detection, evaluate_model_performance) 
+from kedro.pipeline import Pipeline, node, pipeline
+
+from .nodes import (build_features, detect_syndicates, evaluate_models, evaluate_patterns, prepare_dataset, sync_to_neo4j,
+                    train_baselines, train_hybrid)
 
 
 def create_pipeline(**kwargs) -> Pipeline:
-    return Pipeline(
-        [
-            node(
-                func=build_bipartite_graph_and_sync,
-                inputs=["raw_transactions_dataset", "params:neo4j_credentials"],
-                outputs="pyg_bipartite_tensor",
-                name="build_graph_node",
-            ),
-            node(
-                func=extract_temporal_windows,
-                inputs="raw_transactions_dataset",
-                outputs="temporal_sequence_tensor",
-                name="extract_temporal_node",
-            ),
-            node(
-                func=train_gcn_cnn_model,
-                inputs=["pyg_bipartite_tensor", "temporal_sequence_tensor"],
-                outputs="fraud_probabilities",
-                name="train_hybrid_model_node",
-            ),
-            node(
-                func=run_louvain_community_detection,
-                inputs=["pyg_bipartite_tensor", "fraud_probabilities"],
-                outputs="community_partitions",
-                name="louvain_clustering_node",
-            ),
-            node(
-                func=evaluate_model_performance,
-                inputs=["pyg_bipartite_tensor", "temporal_sequence_tensor", "fraud_probabilities","params:aml_risk_appetite"],
-                outputs="evaluation_metrics",
-                name="evaluation_node",
-            )
-        ]
-    )
+    return pipeline([
+        node(prepare_dataset, ["raw_transactions", "params:data"], "model_dataset", name="prepare_dataset_node"),
+        node(build_features, ["model_dataset", "params:features"], "model_features", name="build_features_node"),
+        node(train_baselines, ["model_dataset", "model_features", "params:data"], "baseline_scores",
+             name="train_baselines_node"),
+        node(train_hybrid, ["model_dataset", "model_features", "params:model"], "hybrid_scores",
+             name="train_hybrid_model_node"),
+        node(evaluate_models, ["model_dataset", "baseline_scores", "hybrid_scores", "params:evaluation"],
+             ["evaluation_metrics", "threshold_sweep"], name="evaluation_node"),
+        node(evaluate_patterns, ["model_dataset", "baseline_scores", "hybrid_scores", "evaluation_metrics", "params:evaluation"],
+             "pattern_recall", name="pattern_evaluation_node"),
+        node(detect_syndicates, ["model_dataset", "baseline_scores", "hybrid_scores", "evaluation_metrics", "params:syndicates"],
+             ["syndicate_summary", "account_roles", "fraud_rings_dashboard"], name="syndicate_analysis_node"),
+        node(sync_to_neo4j, ["model_dataset", "hybrid_scores", "evaluation_metrics", "params:neo4j"],
+             "neo4j_sync_status", name="neo4j_sync_node"),
+    ])
