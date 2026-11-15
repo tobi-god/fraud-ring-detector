@@ -1,11 +1,11 @@
-kedro
+kedro>=1.0
 kedro-viz
+kedro-datasets[pandas-csvdataset,json-jsondataset,text-textdataset]
 pandas
+numpy
 torch
 torch-geometric
-neo4j
+scikit-learn
 networkx
 pyvis
-duckdb
-scikit-learn
-
+neo4j>=5.20
