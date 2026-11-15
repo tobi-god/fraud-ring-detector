@@ -1,0 +1,772 @@
+{
+  "baseline_tabular_full": {
+    "model": "M1 GradBoost, tabular only",
+    "pr_auc": 0.12798021381086425,
+    "roc_auc": 0.8175163809624104,
+    "precision": 0.11294765840220386,
+    "recall": 0.44244604316546765,
+    "f1": 0.1799561082662765,
+    "threshold": 0.9202585124918405,
+    "prevalence": 0.0044715381769635364,
+    "population_prevalence": 0.0014901069809300379,
+    "population_precision": 0.04058775741973889,
+    "alerts_per_10k": 162.43615797435146,
+    "recall_by_type": {
+      "fraud_type": {
+        "account_takeover": {
+          "n": 40,
+          "recall": 0.0
+        },
+        "card_testing": {
+          "n": 143,
+          "recall": 0.7202797202797203
+        },
+        "geo_anomaly": {
+          "n": 76,
+          "recall": 0.013157894736842105
+        },
+        "money_laundering_ring": {
+          "n": 19,
+          "recall": 1.0
+        }
+      }
+    },
+    "at_equal_volume": {
+      "5": {
+        "recall": 0.08992805755395683,
+        "population_precision": 0.2740756749835001,
+        "realised_alerts_per_10k": 4.889249159039616,
+        "alerts_in_test": 47,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.04195804195804196
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "10": {
+        "recall": 0.10071942446043165,
+        "population_precision": 0.151753459338944,
+        "realised_alerts_per_10k": 9.889904201032575,
+        "alerts_in_test": 80,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.06293706293706294
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "20": {
+        "recall": 0.12949640287769784,
+        "population_precision": 0.09648938783543286,
+        "realised_alerts_per_10k": 19.998416226092598,
+        "alerts_in_test": 148,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.11888111888111888
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "50": {
+        "recall": 0.19424460431654678,
+        "population_precision": 0.058073701558834775,
+        "realised_alerts_per_10k": 49.8410180737043,
+        "alerts_in_test": 345,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.24475524475524477
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      }
+    },
+    "at_alert_budget": {
+      "5": {
+        "threshold": 0.9641110058133189,
+        "recall": 0.0683453237410072,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 1.0184184402039829,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "10": {
+        "threshold": 0.9641110058133189,
+        "recall": 0.0683453237410072,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 1.0184184402039829,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "20": {
+        "threshold": 0.9641110058133189,
+        "recall": 0.0683453237410072,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 1.0184184402039829,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "50": {
+        "threshold": 0.9641110058133189,
+        "recall": 0.0683453237410072,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 1.0184184402039829,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "baseline_graph_features": {
+    "model": "M2 GradBoost + graph/sequence features",
+    "pr_auc": 0.7254208460873076,
+    "roc_auc": 0.8596634688759099,
+    "precision": 0.9754901960784313,
+    "recall": 0.7158273381294964,
+    "f1": 0.8257261410788381,
+    "threshold": 0.945049931846222,
+    "prevalence": 0.0044715381769635364,
+    "population_prevalence": 0.0014901069809300379,
+    "population_precision": 0.9296935859346165,
+    "alerts_per_10k": 11.473235158603595,
+    "recall_by_type": {
+      "fraud_type": {
+        "account_takeover": {
+          "n": 40,
+          "recall": 0.95
+        },
+        "card_testing": {
+          "n": 143,
+          "recall": 1.0
+        },
+        "geo_anomaly": {
+          "n": 76,
+          "recall": 0.0
+        },
+        "money_laundering_ring": {
+          "n": 19,
+          "recall": 0.9473684210526315
+        }
+      }
+    },
+    "at_equal_volume": {
+      "5": {
+        "recall": 0.3345323741007194,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 4.98489025994581,
+        "alerts_in_test": 93,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.6503496503496503
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "10": {
+        "recall": 0.6690647482014388,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 9.96978051989162,
+        "alerts_in_test": 186,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.775
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.965034965034965
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 0.8947368421052632
+            }
+          }
+        }
+      },
+      "20": {
+        "recall": 0.7230215827338129,
+        "population_precision": 0.539512128845268,
+        "realised_alerts_per_10k": 19.969514125672823,
+        "alerts_in_test": 258,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.975
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "50": {
+        "recall": 0.7230215827338129,
+        "population_precision": 0.2155768029971332,
+        "realised_alerts_per_10k": 49.97659733404001,
+        "alerts_in_test": 444,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.975
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      }
+    },
+    "at_alert_budget": {
+      "5": {
+        "threshold": 0.9724034765875945,
+        "recall": 0.0,
+        "population_precision": 0.0,
+        "realised_alerts_per_10k": 0.0,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "10": {
+        "threshold": 0.9615684145818686,
+        "recall": 0.5575539568345323,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 8.308150433243016,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.965034965034965
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 0.8947368421052632
+            }
+          }
+        }
+      },
+      "20": {
+        "threshold": 0.8752279584779268,
+        "recall": 0.7194244604316546,
+        "population_precision": 0.6301547686732096,
+        "realised_alerts_per_10k": 17.01200187690669,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.975
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 0.9473684210526315
+            }
+          }
+        }
+      },
+      "50": {
+        "threshold": 0.5595938477240708,
+        "recall": 0.7230215827338129,
+        "population_precision": 0.20436196153763841,
+        "realised_alerts_per_10k": 52.71918020792303,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.975
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "hybrid_sage_cnn": {
+    "model": "M3 Hybrid GraphSAGE+CNN",
+    "pr_auc": 0.7290307900834152,
+    "roc_auc": 0.8678009170386536,
+    "precision": 0.966183574879227,
+    "recall": 0.7194244604316546,
+    "f1": 0.8247422680412371,
+    "threshold": 0.5607703328132629,
+    "prevalence": 0.0044715381769635364,
+    "population_prevalence": 0.0014901069809300379,
+    "population_precision": 0.9046964425948706,
+    "alerts_per_10k": 11.849492937832764,
+    "recall_by_type": {
+      "fraud_type": {
+        "account_takeover": {
+          "n": 40,
+          "recall": 0.95
+        },
+        "card_testing": {
+          "n": 143,
+          "recall": 1.0
+        },
+        "geo_anomaly": {
+          "n": 76,
+          "recall": 0.0
+        },
+        "money_laundering_ring": {
+          "n": 19,
+          "recall": 1.0
+        }
+      }
+    },
+    "at_equal_volume": {
+      "5": {
+        "recall": 0.3345323741007194,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 4.98489025994581,
+        "alerts_in_test": 93,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.05
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.5034965034965035
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "10": {
+        "recall": 0.6690647482014388,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 9.96978051989162,
+        "alerts_in_test": 186,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.625
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.993006993006993
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "20": {
+        "recall": 0.7194244604316546,
+        "population_precision": 0.5382727883931296,
+        "realised_alerts_per_10k": 19.915913155135772,
+        "alerts_in_test": 257,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.95
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "50": {
+        "recall": 0.7266187050359713,
+        "population_precision": 0.21711733332128894,
+        "realised_alerts_per_10k": 49.86886990023101,
+        "alerts_in_test": 444,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 1.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      }
+    },
+    "at_alert_budget": {
+      "5": {
+        "threshold": 0.9822741150856018,
+        "recall": 0.44964028776978415,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 6.700121317131464,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.125
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 0.7062937062937062
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "10": {
+        "threshold": 0.8273193836212158,
+        "recall": 0.6942446043165468,
+        "population_precision": 1.0,
+        "realised_alerts_per_10k": 10.344987313650982,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.775
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "20": {
+        "threshold": 0.3305748403072357,
+        "recall": 0.7194244604316546,
+        "population_precision": 0.4834467013217973,
+        "realised_alerts_per_10k": 22.174510815980614,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 0.95
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      },
+      "50": {
+        "threshold": 0.22402583062648773,
+        "recall": 0.7266187050359713,
+        "population_precision": 0.2129832613314762,
+        "realised_alerts_per_10k": 50.83684032630737,
+        "recall_by_type": {
+          "fraud_type": {
+            "account_takeover": {
+              "n": 40,
+              "recall": 1.0
+            },
+            "card_testing": {
+              "n": 143,
+              "recall": 1.0
+            },
+            "geo_anomaly": {
+              "n": 76,
+              "recall": 0.0
+            },
+            "money_laundering_ring": {
+              "n": 19,
+              "recall": 1.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "bootstrap": {
+    "unit": "sender accounts",
+    "n_boot": 200,
+    "pr_auc_ci95": {
+      "baseline_tabular_full": [
+        0.0967251846235919,
+        0.16070987069381157
+      ],
+      "baseline_graph_features": [
+        0.6678012764752848,
+        0.7841312054973119
+      ],
+      "hybrid_sage_cnn": [
+        0.6708371083430997,
+        0.7852103743989389
+      ]
+    },
+    "delta_M2_minus_M1": {
+      "mean": 0.5989820976503641,
+      "ci95": [
+        0.53848876305296,
+        0.6469726225177175
+      ],
+      "share_positive": 1.0
+    },
+    "delta_M3_minus_M2": {
+      "mean": 0.0034807752969173754,
+      "ci95": [
+        0.0007735094783274916,
+        0.0071639177537220775
+      ],
+      "share_positive": 0.985
+    }
+  },
+  "note": "Time-held-out test set. negative_sampling_fraction=0.3099 -> population prevalence 0.00149. 'f1' is plain F1. Compare M3 with M2, not only M1."
+}

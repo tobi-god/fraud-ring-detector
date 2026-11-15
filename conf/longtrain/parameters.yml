@@ -1,0 +1,11 @@
+# Full hybrid (with GraphSAGE messages) trained longer. Slow: about 9 s per epoch on 8 GB / CPU.
+features:
+  drop_balance_features: true
+  entity_columns: [card_id, device_id]
+evaluation:
+  negative_sampling_fraction: 0.3099
+model:
+  epochs: 150
+  patience: 30
+  warmup_epochs: 20
+  learning_rate: 0.01

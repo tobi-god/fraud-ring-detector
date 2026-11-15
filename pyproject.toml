@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fraud_ring_detector"
+version = "0.5.4"
+description = "Hybrid GraphSAGE + 1D-CNN transaction fraud detector with Louvain syndicate clustering"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = "requirements.txt" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.kedro]
+package_name = "fraud_ring_detector"
+project_name = "Fraud Ring Detector"
+kedro_init_version = "1.7.0"
+source_dir = "src"

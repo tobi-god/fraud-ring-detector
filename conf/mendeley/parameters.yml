@@ -1,0 +1,6 @@
+# Overrides for the Mendeley-style banking file. Use: kedro run --env mendeley
+features:
+  drop_balance_features: true       # this dataset has no balance columns
+  entity_columns: [card_id, device_id]
+evaluation:
+  negative_sampling_fraction: 0.3099   # printed by filter_data.py --customer-frac 0.3 (seed 42) on Fraud_Detection_Dataset.csv; re-check if you change the sampling

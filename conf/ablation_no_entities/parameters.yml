@@ -1,0 +1,6 @@
+# ablation_no_entities
+features:
+  drop_balance_features: true
+  entity_columns: []      # no card/device nodes and no shared-card/device counts
+evaluation:
+  negative_sampling_fraction: 0.3099   # same sample as the mendeley environment

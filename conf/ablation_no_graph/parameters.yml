@@ -1,0 +1,8 @@
+# ablation_no_graph
+features:
+  drop_balance_features: true
+  entity_columns: [card_id, device_id]
+model:
+  message_passing: false  # same inputs as M3, but nodes never see neighbours
+evaluation:
+  negative_sampling_fraction: 0.3099   # same sample as the mendeley environment

@@ -1,14 +1,59 @@
-# Neural Network Hyperparameters & Dimensions
-model_params:
-  in_features: 64
-  gcn_hidden: 128
-  gnn_out: 64
-  cnn_channels: 32
-  seq_len: 10
-  num_features: 4
-  dropout_rate: 0.3
-  learning_rate: 0.001
+data:
+  seed: 42
+  max_rows: 2000000            # keep ALL fraud rows + a sample of legit rows up to this size
+  split_quantiles: [0.6, 0.8] # time-based split on `step`: train / val / test
 
-# for dynamic thresholding
-aml_risk_appetite:
-  decision_threshold: 0.75  # Higher = fewer alerts, lower = more alerts
+features:
+  seq_len: 10                 # last-K transactions per originating account
+  bidirectional_edges: true     # add reverse edges so senders also receive neighbour messages (SAGEConv is directed)
+  entity_columns: []            # e.g. [card_id, device_id]: become graph nodes + causal shared-entity features
+  extra_columns: auto           # auto = all remaining numeric columns + categoricals with <= max_cardinality values
+  max_cardinality: 30
+  exclude_columns: [fraud_type, isFlaggedFraud, transaction_id, ip_address, pattern_type, pattern_id]   # label-like or id-like: never features
+  account_flow_features: false  # causal in/out amounts, pass-through ratio, reverse-edge flag (account-to-account data)
+  drop_balance_features: false  # true = remove all balance-derived features (PaySim cancels fraud, so balances can leak the label). Report BOTH runs.
+
+model:
+  message_passing: true        # false = ablation: node MLP instead of GraphSAGE (same inputs, no neighbour messages)
+  seed: 42
+  hidden: 64
+  gnn_out: 32
+  cnn_channels: 32
+  dropout: 0.3
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  epochs: 60
+  patience: 10
+  warmup_epochs: 0            # epochs that can never be selected as 'best' (guards against a lucky epoch 1)
+  focal_alpha: 0.75
+  focal_gamma: 2.0
+
+evaluation:
+  negative_sampling_fraction: 1.0   # default only: set the real value in the dataset's environment (conf/<env>/parameters.yml)
+  analysis_columns: [fraud_type]    # report recall per value (post-hoc only; never a feature)
+  pattern_column: pattern_type      # laundering pattern per transaction (AMLworld); empty/absent = skip pattern evaluation
+  alert_budgets_per_10k: [5, 10, 20, 50]   # compare models at EQUAL alert volume (threshold set on validation)
+  pattern_alert_budget: null        # e.g. 20: score pattern recall at that alert budget instead of each model's own threshold
+  bootstrap_samples: 200            # sender-clustered bootstrap for PR-AUC confidence intervals (0 = off)
+  min_pattern_tx: 2                 # an instance needs at least this many test-period transactions to be scored
+  decision_threshold: null    # null = best-F1 threshold chosen on validation. Set e.g. 0.75 for a fixed risk appetite
+  sweep_thresholds: [0.1, 0.25, 0.5, 0.75, 0.9, 0.95]
+
+neo4j:
+  enabled: false              # secrets come from env vars: NEO4J_URI / NEO4J_USERNAME / NEO4J_PASSWORD
+  database: null              # null -> NEO4J_DATABASE env var, else the username (= instance ID on new Aura)
+  batch_size: 2000
+
+syndicates:
+  seed: 42
+  topology:
+    score_source: hybrid            # which model's flags to analyse: hybrid (M3) or graph_features (M2)
+    candidate_threshold_factor: 1.0   # graph edges = test tx scoring >= factor x alert threshold. <1 finds more cycles but floods syndicates with false edges (measured: 0.5 -> 3 cycles, precision 0.01)
+    louvain_resolution: 1.0   # higher = more, smaller communities
+    overlap: true             # edge-based overlapping communities (guarded by max_line_graph_edges)
+    max_line_graph_edges: 2000000
+    max_cycle_len: 6          # directed cycles up to this many hops
+    max_cycles: 5000
+    fan_threshold: 4          # degree at which an account is tagged a fan-in / fan-out hub
+    role_near_zero: 0.2       # in/out amount below this share of the other side = originator / collector
+    role_pass_through: 0.6    # min(in,out)/max(in,out) at or above this = mule (pass-through)
