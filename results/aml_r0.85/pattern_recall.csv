@@ -1,0 +1,28 @@
+model,pattern_type,n_tx,tx_recall,n_instances,alert_budget_per_10k,instances_any_flagged,instances_majority_flagged
+"M1 GradBoost, tabular only",BIPARTITE,4,0.25,0,20,0,0
+"M1 GradBoost, tabular only",CYCLE,2,0.5,0,20,0,0
+"M1 GradBoost, tabular only",FAN_IN,3,0.3333,0,20,0,0
+"M1 GradBoost, tabular only",FAN_OUT,5,0.0,1,20,0,0
+"M1 GradBoost, tabular only",GATHER_SCATTER,5,0.0,0,20,0,0
+"M1 GradBoost, tabular only",RANDOM,1,0.0,0,20,0,0
+"M1 GradBoost, tabular only",SCATTER_GATHER,6,0.1667,1,20,0,0
+"M1 GradBoost, tabular only",STACK,3,0.0,0,20,0,0
+"M1 GradBoost, tabular only",UNCLASSIFIED,18,0.0556,0,20,0,0
+M2 GradBoost + graph/sequence features,BIPARTITE,4,0.25,0,20,0,0
+M2 GradBoost + graph/sequence features,CYCLE,2,0.5,0,20,0,0
+M2 GradBoost + graph/sequence features,FAN_IN,3,0.0,0,20,0,0
+M2 GradBoost + graph/sequence features,FAN_OUT,5,0.0,1,20,0,0
+M2 GradBoost + graph/sequence features,GATHER_SCATTER,5,0.2,0,20,0,0
+M2 GradBoost + graph/sequence features,RANDOM,1,1.0,0,20,0,0
+M2 GradBoost + graph/sequence features,SCATTER_GATHER,6,0.1667,1,20,0,0
+M2 GradBoost + graph/sequence features,STACK,3,0.6667,0,20,0,0
+M2 GradBoost + graph/sequence features,UNCLASSIFIED,18,0.1111,0,20,0,0
+M3 Hybrid GraphSAGE+CNN,BIPARTITE,4,0.0,0,20,0,0
+M3 Hybrid GraphSAGE+CNN,CYCLE,2,0.0,0,20,0,0
+M3 Hybrid GraphSAGE+CNN,FAN_IN,3,0.0,0,20,0,0
+M3 Hybrid GraphSAGE+CNN,FAN_OUT,5,0.0,1,20,0,0
+M3 Hybrid GraphSAGE+CNN,GATHER_SCATTER,5,0.0,0,20,0,0
+M3 Hybrid GraphSAGE+CNN,RANDOM,1,0.0,0,20,0,0
+M3 Hybrid GraphSAGE+CNN,SCATTER_GATHER,6,0.0,1,20,0,0
+M3 Hybrid GraphSAGE+CNN,STACK,3,0.0,0,20,0,0
+M3 Hybrid GraphSAGE+CNN,UNCLASSIFIED,18,0.0,0,20,0,0

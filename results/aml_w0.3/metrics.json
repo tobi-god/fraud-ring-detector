@@ -1,0 +1,1204 @@
+{
+  "baseline_tabular_full": {
+    "model": "M1 GradBoost, tabular only",
+    "pr_auc": 0.016084179319963116,
+    "roc_auc": 0.8946060998218526,
+    "precision": 0.022922636103151862,
+    "recall": 0.19047619047619047,
+    "f1": 0.04092071611253197,
+    "threshold": 0.9393473351006519,
+    "prevalence": 0.0007255640396641675,
+    "population_prevalence": 0.0012675654079795649,
+    "population_precision": 0.039392350921445905,
+    "alerts_per_10k": 61.29134830587144,
+    "recall_by_type": {
+      "pattern_type": {
+        "CYCLE": {
+          "n": 2,
+          "recall": 0.5
+        },
+        "FAN_IN": {
+          "n": 1,
+          "recall": 0.0
+        },
+        "FAN_OUT": {
+          "n": 2,
+          "recall": 0.0
+        },
+        "GATHER_SCATTER": {
+          "n": 3,
+          "recall": 0.6666666666666666
+        },
+        "RANDOM": {
+          "n": 1,
+          "recall": 1.0
+        },
+        "SCATTER_GATHER": {
+          "n": 4,
+          "recall": 0.75
+        },
+        "STACK": {
+          "n": 2,
+          "recall": 0.5
+        },
+        "UNCLASSIFIED": {
+          "n": 27,
+          "recall": 0.0
+        }
+      }
+    },
+    "at_equal_volume": {
+      "5": {
+        "recall": 0.023809523809523808,
+        "population_precision": 0.06080276021205929,
+        "realised_alerts_per_10k": 4.963611628182703,
+        "alerts_in_test": 28,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.3333333333333333
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.0
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "10": {
+        "recall": 0.047619047619047616,
+        "population_precision": 0.06080276021205929,
+        "realised_alerts_per_10k": 9.927223256365407,
+        "alerts_in_test": 56,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.3333333333333333
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.0
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "20": {
+        "recall": 0.07142857142857142,
+        "population_precision": 0.04550233579950244,
+        "realised_alerts_per_10k": 19.897964509603188,
+        "alerts_in_test": 113,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.3333333333333333
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.25
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "50": {
+        "recall": 0.14285714285714285,
+        "population_precision": 0.03622858243070013,
+        "realised_alerts_per_10k": 49.98284791155981,
+        "alerts_in_test": 285,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.3333333333333333
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.5
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      }
+    },
+    "at_alert_budget": {
+      "5": {
+        "threshold": 0.9527996273551741,
+        "recall": 0.0,
+        "population_precision": 0.0,
+        "realised_alerts_per_10k": 0.0,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.0
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.0
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "10": {
+        "threshold": 0.9527996273551741,
+        "recall": 0.0,
+        "population_precision": 0.0,
+        "realised_alerts_per_10k": 0.0,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.0
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.0
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "20": {
+        "threshold": 0.9527996263551741,
+        "recall": 0.07142857142857142,
+        "population_precision": 0.06010583143454712,
+        "realised_alerts_per_10k": 15.063494526791386,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.3333333333333333
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.25
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "50": {
+        "threshold": 0.9527996263551741,
+        "recall": 0.07142857142857142,
+        "population_precision": 0.06010583143454712,
+        "realised_alerts_per_10k": 15.063494526791386,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.3333333333333333
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.25
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "baseline_graph_features": {
+    "model": "M2 GradBoost + graph/sequence features",
+    "pr_auc": 0.13300122981185455,
+    "roc_auc": 0.9628127459406418,
+    "precision": 0.2962962962962963,
+    "recall": 0.19047619047619047,
+    "f1": 0.2318840579710145,
+    "threshold": 0.9717250554297605,
+    "prevalence": 0.0007255640396641675,
+    "population_prevalence": 0.0012675654079795649,
+    "population_precision": 0.4239568486350131,
+    "alerts_per_10k": 5.694943503535749,
+    "recall_by_type": {
+      "pattern_type": {
+        "CYCLE": {
+          "n": 2,
+          "recall": 0.5
+        },
+        "FAN_IN": {
+          "n": 1,
+          "recall": 0.0
+        },
+        "FAN_OUT": {
+          "n": 2,
+          "recall": 0.5
+        },
+        "GATHER_SCATTER": {
+          "n": 3,
+          "recall": 0.6666666666666666
+        },
+        "RANDOM": {
+          "n": 1,
+          "recall": 0.0
+        },
+        "SCATTER_GATHER": {
+          "n": 4,
+          "recall": 0.75
+        },
+        "STACK": {
+          "n": 2,
+          "recall": 0.5
+        },
+        "UNCLASSIFIED": {
+          "n": 27,
+          "recall": 0.0
+        }
+      }
+    },
+    "at_equal_volume": {
+      "5": {
+        "recall": 0.16666666666666666,
+        "population_precision": 0.4333411801780963,
+        "realised_alerts_per_10k": 4.875163289191732,
+        "alerts_in_test": 23,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.5
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "10": {
+        "recall": 0.21428571428571427,
+        "population_precision": 0.27249541781673453,
+        "realised_alerts_per_10k": 9.967916562745337,
+        "alerts_in_test": 51,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.75
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.037037037037037035
+            }
+          }
+        }
+      },
+      "20": {
+        "recall": 0.35714285714285715,
+        "population_precision": 0.22756013523157612,
+        "realised_alerts_per_10k": 19.893727473864523,
+        "alerts_in_test": 104,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.75
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.2222222222222222
+            }
+          }
+        }
+      },
+      "50": {
+        "recall": 0.4523809523809524,
+        "population_precision": 0.11483355960847422,
+        "realised_alerts_per_10k": 49.935092878948765,
+        "alerts_in_test": 275,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.75
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.3333333333333333
+            }
+          }
+        }
+      }
+    },
+    "at_alert_budget": {
+      "5": {
+        "threshold": 0.972650642095623,
+        "recall": 0.14285714285714285,
+        "population_precision": 0.6360930239395062,
+        "realised_alerts_per_10k": 2.8467655791447637,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.25
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "10": {
+        "threshold": 0.9676959268158067,
+        "recall": 0.21428571428571427,
+        "population_precision": 0.3597306498578514,
+        "realised_alerts_per_10k": 7.550681571339439,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.75
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.037037037037037035
+            }
+          }
+        }
+      },
+      "20": {
+        "threshold": 0.9602451952928468,
+        "recall": 0.2857142857142857,
+        "population_precision": 0.23056173766066676,
+        "realised_alerts_per_10k": 15.707790408399681,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.75
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.1111111111111111
+            }
+          }
+        }
+      },
+      "50": {
+        "threshold": 0.8777731328559198,
+        "recall": 0.4523809523809524,
+        "population_precision": 0.11483355960847422,
+        "realised_alerts_per_10k": 49.935092878948765,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 1.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.75
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.3333333333333333
+            }
+          }
+        }
+      }
+    }
+  },
+  "hybrid_sage_cnn": {
+    "model": "M3 Hybrid GraphSAGE+CNN",
+    "pr_auc": 0.05177340666553935,
+    "roc_auc": 0.8805555829966314,
+    "precision": 0.1111111111111111,
+    "recall": 0.09523809523809523,
+    "f1": 0.10256410256410256,
+    "threshold": 0.3986108601093292,
+    "prevalence": 0.0007255640396641675,
+    "population_prevalence": 0.0012675654079795649,
+    "population_precision": 0.179315047374392,
+    "alerts_per_10k": 6.732313702241642,
+    "recall_by_type": {
+      "pattern_type": {
+        "CYCLE": {
+          "n": 2,
+          "recall": 0.5
+        },
+        "FAN_IN": {
+          "n": 1,
+          "recall": 0.0
+        },
+        "FAN_OUT": {
+          "n": 2,
+          "recall": 0.0
+        },
+        "GATHER_SCATTER": {
+          "n": 3,
+          "recall": 0.6666666666666666
+        },
+        "RANDOM": {
+          "n": 1,
+          "recall": 0.0
+        },
+        "SCATTER_GATHER": {
+          "n": 4,
+          "recall": 0.0
+        },
+        "STACK": {
+          "n": 2,
+          "recall": 0.0
+        },
+        "UNCLASSIFIED": {
+          "n": 27,
+          "recall": 0.037037037037037035
+        }
+      }
+    },
+    "at_equal_volume": {
+      "5": {
+        "recall": 0.07142857142857142,
+        "population_precision": 0.19247874841831905,
+        "realised_alerts_per_10k": 4.703915992194673,
+        "alerts_in_test": 25,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.0
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.0
+            }
+          }
+        }
+      },
+      "10": {
+        "recall": 0.14285714285714285,
+        "population_precision": 0.18243423554004767,
+        "realised_alerts_per_10k": 9.925810911119184,
+        "alerts_in_test": 53,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 1.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.25
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.037037037037037035
+            }
+          }
+        }
+      },
+      "20": {
+        "recall": 0.16666666666666666,
+        "population_precision": 0.10617965343180613,
+        "realised_alerts_per_10k": 19.896552164356965,
+        "alerts_in_test": 110,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 1.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.25
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.037037037037037035
+            }
+          }
+        }
+      },
+      "50": {
+        "recall": 0.23809523809523808,
+        "population_precision": 0.06038267692686875,
+        "realised_alerts_per_10k": 49.98143556631359,
+        "alerts_in_test": 282,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 1.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.5
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.1111111111111111
+            }
+          }
+        }
+      }
+    },
+    "at_alert_budget": {
+      "5": {
+        "threshold": 0.3967038691043854,
+        "recall": 0.09523809523809523,
+        "population_precision": 0.15893454855398573,
+        "realised_alerts_per_10k": 7.595611913458034,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.0
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.037037037037037035
+            }
+          }
+        }
+      },
+      "10": {
+        "threshold": 0.3796957731246948,
+        "recall": 0.16666666666666666,
+        "population_precision": 0.14700047331718138,
+        "realised_alerts_per_10k": 14.371443612572051,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 1.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.25
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.037037037037037035
+            }
+          }
+        }
+      },
+      "20": {
+        "threshold": 0.362881600856781,
+        "recall": 0.16666666666666666,
+        "population_precision": 0.09252937357829775,
+        "realised_alerts_per_10k": 22.8317660824927,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 1.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.25
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.037037037037037035
+            }
+          }
+        }
+      },
+      "50": {
+        "threshold": 0.32711881399154663,
+        "recall": 0.2619047619047619,
+        "population_precision": 0.0512422594409518,
+        "realised_alerts_per_10k": 64.78664680236317,
+        "recall_by_type": {
+          "pattern_type": {
+            "CYCLE": {
+              "n": 2,
+              "recall": 1.0
+            },
+            "FAN_IN": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "FAN_OUT": {
+              "n": 2,
+              "recall": 0.0
+            },
+            "GATHER_SCATTER": {
+              "n": 3,
+              "recall": 0.6666666666666666
+            },
+            "RANDOM": {
+              "n": 1,
+              "recall": 0.0
+            },
+            "SCATTER_GATHER": {
+              "n": 4,
+              "recall": 0.5
+            },
+            "STACK": {
+              "n": 2,
+              "recall": 0.5
+            },
+            "UNCLASSIFIED": {
+              "n": 27,
+              "recall": 0.14814814814814814
+            }
+          }
+        }
+      }
+    }
+  },
+  "bootstrap": {
+    "unit": "sender accounts",
+    "n_boot": 200,
+    "pr_auc_ci95": {
+      "baseline_tabular_full": [
+        0.008272824210915934,
+        0.028775166005700303
+      ],
+      "baseline_graph_features": [
+        0.06109930252737725,
+        0.2941067203465677
+      ],
+      "hybrid_sage_cnn": [
+        0.02064436898691145,
+        0.13977177479876682
+      ]
+    },
+    "delta_M2_minus_M1": {
+      "mean": 0.13751371287461098,
+      "ci95": [
+        0.05091633935319481,
+        0.26662434885667313
+      ],
+      "share_positive": 1.0
+    },
+    "delta_M3_minus_M2": {
+      "mean": -0.0878668528908226,
+      "ci95": [
+        -0.17762262427723768,
+        -0.0030678330594024372
+      ],
+      "share_positive": 0.02
+    }
+  },
+  "note": "Time-held-out test set. negative_sampling_fraction=1.0 -> population prevalence 0.00127. 'f1' is plain F1. Compare M3 with M2, not only M1."
+}
