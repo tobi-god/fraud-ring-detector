@@ -1,0 +1,13 @@
+# Overrides for IBM AMLworld (account-to-account). Use: kedro run --env amlworld
+features:
+  drop_balance_features: true       # AMLworld has no balance columns
+  entity_columns: []
+  account_flow_features: true       # graph-shaped signals: pass-through, reverse transfers, fan-in/fan-out history
+evaluation:
+  analysis_columns: [pattern_type]  # recall per laundering pattern type
+  pattern_column: pattern_type
+  pattern_alert_budget: 20          # pattern recall at the same alert volume for every model
+  negative_sampling_fraction: 1.0   # a time window keeps every transaction inside it: no sampling correction
+syndicates:
+  topology:
+    score_source: graph_features    # M2 is the strongest model on AMLworld, so analyse its flags

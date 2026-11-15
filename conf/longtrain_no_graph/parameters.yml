@@ -1,0 +1,12 @@
+# Is the NETWORK family just undertrained? Same inputs as M3, no neighbour messages, 5x more updates and a 3x larger step.
+features:
+  drop_balance_features: true
+  entity_columns: [card_id, device_id]
+evaluation:
+  negative_sampling_fraction: 0.3099
+model:
+  message_passing: false
+  epochs: 300
+  patience: 40
+  warmup_epochs: 20
+  learning_rate: 0.01

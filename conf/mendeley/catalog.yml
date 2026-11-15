@@ -1,0 +1,28 @@
+# Per-dataset paths so results from different datasets never overwrite each other.
+raw_transactions:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/banking_sample.csv
+evaluation_metrics:
+  type: json.JSONDataset
+  filepath: data/07_model_output/mendeley/metrics.json
+threshold_sweep:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/mendeley/threshold_sweep.csv
+syndicate_summary:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/mendeley/syndicates.csv
+account_roles:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/mendeley/account_roles.csv
+fraud_rings_dashboard:
+  type: text.TextDataset
+  filepath: data/07_model_output/mendeley/fraud_rings_dashboard.html
+  fs_args:
+    open_args_save:
+      encoding: utf-8      # Windows defaults to cp1252, which cannot encode the dashboard's characters
+neo4j_sync_status:
+  type: json.JSONDataset
+  filepath: data/07_model_output/mendeley/neo4j_sync_status.json
+pattern_recall:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/mendeley/pattern_recall.csv
