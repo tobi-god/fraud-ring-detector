@@ -12,14 +12,14 @@ A hybrid deep learning pipeline built with Kedro and PyTorch Geometric to detect
 
 ## Motivation & Methodology
 
-This project investigates whether graph neural networks capture structural fraud patterns—particularly coordinated multi-account laundering syndicates—that tabular models miss.
+This project investigates whether graph neural networks capture structural fraud patterns(particularly coordinated multi-account laundering syndicates)that tabular models miss.
 
 The pipeline scores each transaction by combining:
 - **GraphSAGE node embeddings** over accounts (customers, merchants, and shared cards/devices where available),
 - **A 1D-CNN encoder** over each sender's recent transaction history, and
 - **Transaction-level tabular features**.
 
-Flagged transactions are then projected into a directed network to extract candidate syndicates via amount-weighted community detection, overlap analysis, flow-based role heuristics, and cycle enumeration. Every model is benchmarked against a progressive gradient-boosting ladder so architectural complexity is justified empirically.
+Flagged transactions are then projected into a directed network to extract candidate syndicates via amount-weighted community detection, overlap analysis, flow-based role heuristics, and cycle enumeration. Every model is benchmarked against a progressive gradient-boosting ladder so, architectural complexity is justified empirically.
 
 All experiments follow strict leakage-prevention protocols:
 - Chronological train/validation/test splits rather than random row splits,
@@ -32,7 +32,7 @@ All experiments follow strict leakage-prevention protocols:
 
 ## Architecture & Evaluation Ladder
 
-Transactions are modeled as a heterogeneous graph in which customers, merchants, cards, and devices form nodes, and payment or entity-usage events form edges. Shared infrastructure (such as multiple customers transacting through a single card or device) exposes coordinated activity that appears benign at the single-transaction level.
+Transactions are modeled as a heterogeneous graph where customers, merchants, cards, and devices form nodes, and payment or entity-usage events form edges. Shared infrastructure (such as multiple customers transacting through a single card or device) exposes coordinated activity that appears benign at the single-transaction level.
 
 Three models are evaluated on identical splits to isolate the contribution of each feature and modeling layer:
 
@@ -42,7 +42,7 @@ Three models are evaluated on identical splits to isolate the contribution of ea
 | **M2** | Gradient Boosting + Relational Features | `M1` augmented with causal shared-entity and historical aggregation features |
 | **M3** | Hybrid GraphSAGE + 1D-CNN | End-to-end neural architecture learning directly over the transaction/entity graph and sender sequences |
 
-If **M3** does not outperform **M2**, learned graph message passing has not added predictive signal beyond explicit relational feature engineering.
+Thought: If **M3** does not outperform **M2**, learned graph message passing has not added predictive signal beyond explicit relational feature engineering.
 
 ## Two Evaluation Tracks
 
@@ -83,14 +83,14 @@ A paired bootstrap over sender accounts (200 resamples) yields **M2 minus M1 = +
 | `account_takeover` | 40 | 0.00 | 0.95 | 0.00 |
 | `money_laundering_ring` | 19 | 1.00 | 0.95 | 1.00 |
 
-### Key Findings from Track B
+### Key(and Important) Findings from Track B
 
 1. **Shared infrastructure drives predictive performance:** Removing card and device entities drops `M2` PR-AUC from `0.725` to `0.201`, reduces account-takeover recall from `0.95` to `0.00`, and lowers card-testing recall from `1.00` to `0.45`. Nearly all of `M2`'s gain comes from causal relational counts (shared customers per card/device and distinct devices per customer).
-2. **Training-budget calibration resolves M3's deficit:** Under the default budget (60 full-batch epochs, equating to 60 gradient updates), `M3` scored `0.646` and failed to learn account-takeover patterns. Training the same network for 300 epochs with a larger learning rate and no neighbor message passing increased PR-AUC to **0.729 (0.671 to 0.785)** against `M2`'s **0.725 (0.668 to 0.784)**—a delta of **+0.003 (0.001 to 0.007)**—while raising account-takeover recall from `0.00` to `0.95`.
+2. **Training-budget calibration resolves M3's deficit:** Under the default budget (60 full-batch epochs which equates to 60 gradient updates), `M3` scored `0.646` and failed to learn account-takeover patterns. Training the same network for 300 epochs with a larger learning rate and no neighbor message passing increased PR-AUC to **0.729 (0.671 to 0.785)** against `M2`'s **0.725 (0.668 to 0.784)**—a delta of **+0.003 (0.001 to 0.007)**—while raising account-takeover recall from `0.00` to `0.95`.
 3. **Message passing vs. engineered relational features:** Both `M2` and `M3` receive the explicit relational features. At the default budget, GraphSAGE (`0.646`) and no-message-passing (`0.656`) differed within run-to-run initialization variance (`0.009`). Whether learned message passing adds incremental lift once fully trained is queued for evaluation via `kedro run --env longtrain`.
 4. **Recall at fixed alert volumes:** Under default training, `M3` matched `M2` only at the top of the ranking: at 5 alerts per 10,000, `M2` and `M3` capture 34% and 32% of fraud respectively; at 20 per 10,000, they capture 72% and 63% (compared to 13% for `M1`). With adequate training epochs, `M3`'s recall matches `M2` across all evaluated operating points.
 5. **Geographic anomalies remain uncaptured:** None of the three models detect `geo_anomaly` events (27% of test positives), indicating a feature-representation gap requiring targeted error analysis.
-6. **Limited ring sample size in Track B:** Only 19 test transactions belong to `money_laundering_ring`, and `M1` detects all of them via tabular signals alone—motivating Track A for structural ring evaluation.
+6. **Limited ring sample size in Track B:** Only 19 test transactions belong to `money_laundering_ring`, and `M1` detects all of them via tabular signals alone which motivated Track A for structural ring evaluation.
 7. **Leakage verification:** An initial profiler run yielded `0.965` PR-AUC for a plain tabular model due to `transaction_id` leakage. Removing identifier columns established the true `0.128` tabular baseline.
 
 ### Ablation & Training-Budget Studies
@@ -125,7 +125,7 @@ Because IBM AMLworld (`HI-Small`) contains roughly 5 million transactions, exper
 | `time 0.5` | Clock | 212 to 239 | 306,128 | 504 (0.16%) | 132 |
 | `rows 0.85` | Transaction count | 195 to 207 | 320,099 | 267 (0.08%) | 47 |
 
-A fourth window (`time 0.7`) was **excluded as degenerate**: transaction volume drops sharply after hour 297, leaving 374 rows with a 59% laundering rate where all models trivially achieved `1.000` PR-AUC. The pipeline tooling now automatically rejects degenerate windows. Additionally, roughly 40% of laundering transactions in the dataset are unlisted in `HI-Small_Patterns.txt`—a property of the source dataset rather than a parsing discrepancy.
+A fourth window (`time 0.7`) was **excluded as degenerate**: transaction volume drops sharply after hour 297, leaving 374 rows with a 59% laundering rate where all models trivially achieved `1.000` PR-AUC. The pipeline tooling now automatically rejects degenerate windows. Additionally, roughly 40% of laundering transactions in the dataset are unlisted in `HI-Small_Patterns.txt`, a property of the source dataset rather than a parsing discrepancy.
 
 **PR-AUC with 95% Sender-Clustered Bootstrap Intervals:**
 
